@@ -1,0 +1,19 @@
+File Name: 	 MONAGS-SU-X-R24-X-X-X.X-X.X-0001.ags
+File Size: 	 314 kB
+Checker: 	 python_ags4 v0.4.0
+Dictionary: 	 Standard_dictionary_v4_0_4.ags
+Time (UTC): 	 2022-09-04 23:11:54
+
+6 error(s) found in file.
+
+FAIL: AGS Format Rule 1:
+  Line 1942	 	 Has Non-ASCII character(s).
+
+FAIL: AGS Format Rule 2a:
+  Line 1950	 	 Is not terminated by <CR> and <LF> characters.
+
+FAIL: AGS Format Rule 16:
+  Line -	 ERES	 "PH Units" under ERES_RUNI in ERES not found in ABBR table.
+  Line -	 ERES	 "mg/l" under ERES_RUNI in ERES not found in ABBR table.
+  Line -	 ERES	 "PH Units" under ERES_DUNI in ERES not found in ABBR table.
+  Line -	 ERES	 "mg/l" under ERES_DUNI in ERES not found in ABBR table.

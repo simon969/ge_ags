@@ -129,13 +129,19 @@ class AGSTaskViewSet(ModelViewSet):
         except:
             return HttpResponse(status=404)
         
-        # Create the HttpResponse object with the appropriate CSV header.
+        # Create the HttpResponse object with the appropriate header.
         try:
-            with open(doc.document.path,'r') as file:
-                response = HttpResponse(file.read(),content_type="text/csv")
+            ctype = "text/csv"
+
+            if ('.xlsx' in doc.document.path):
+                ctype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            
+            with open(doc.document.path,'rb') as file:
+                response = HttpResponse(file.read(),content_type=ctype)
                 response['Content-Disposition'] = 'attachment; filename={0}'.format(os.path.basename(doc.document.name))
                 return response
-        except:
+        except Exception as e:
+            print (e)
             return HttpResponse(status=404)
 
     @action(detail=True, methods=['get'])
